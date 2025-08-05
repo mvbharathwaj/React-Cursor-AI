@@ -12,25 +12,25 @@ body {
   font-size: 14px;
 }
 
-.App {
+.app {
   text-align: center;
   min-height: 100vh;
   background-color: #ffffff;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.App-logo {
+.appLogo {
   height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .appLogo {
+    animation: appLogoSpin infinite 20s linear;
   }
 }
 
-.App-header {
+.appHeader {
   background-color: #ffffff;
   min-height: 60vh;
   display: flex;
@@ -43,14 +43,14 @@ body {
   padding: 20px;
 }
 
-.App-header h1 {
+.appHeader h1 {
   margin: 20px 0;
   color: inherit;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.App-link {
+.appLink {
   color: #6366f1;
   transition: color 0.3s ease;
   text-decoration: none;
@@ -67,12 +67,12 @@ body {
   z-index: 1000;
 }
 
-.App-main {
+.appMain {
   padding: 40px 20px;
   min-height: 40vh;
 }
 
-.components-grid {
+.componentsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
@@ -80,7 +80,7 @@ body {
   margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
+@keyframes appLogoSpin {
   from {
     transform: rotate(0deg);
   }
@@ -95,22 +95,22 @@ body.dark-mode {
   color: #ffffff !important;
 }
 
-body.dark-mode .App {
+body.dark-mode .app {
   background-color: #1a1a1a;
   color: #ffffff;
 }
 
-body.dark-mode .App-header {
+body.dark-mode .appHeader {
   background-color: #1a1a1a;
   color: #ffffff;
 }
 
-body.dark-mode .App-link {
+body.dark-mode .appLink {
   color: #4fc3f7;
 }
 
 /* Theme toggle button styles */
-.theme-toggle-btn {
+.themeToggleBtn {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -126,7 +126,7 @@ body.dark-mode .App-link {
   z-index: 1000;
 }
 
-.theme-toggle-btn:hover {
+.themeToggleBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -134,7 +134,7 @@ body.dark-mode .App-link {
 }
 
 /* Dark mode button styles */
-body.dark-mode .theme-toggle-btn {
+body.dark-mode .themeToggleBtn {
   background-color: #333333;
   color: #ffffff;
   border-color: #ffffff;
@@ -144,28 +144,28 @@ body.dark-mode .theme-toggle-btn {
   z-index: 1000;
 }
 
-body.dark-mode .theme-toggle-btn:hover {
+body.dark-mode .themeToggleBtn:hover {
   background-color: #444444;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
-  .App-header {
+  .appHeader {
     min-height: 50vh;
     padding: 15px;
   }
   
-  .App-header h1 {
+  .appHeader h1 {
     font-size: 2rem;
   }
   
-  .components-grid {
+  .componentsGrid {
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 0 10px;
   }
   
-  .App-main {
+  .appMain {
     padding: 20px 10px;
   }
 }

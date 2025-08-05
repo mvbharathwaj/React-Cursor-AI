@@ -1,4 +1,4 @@
-.todo-container {
+.todoContainer {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -11,26 +11,26 @@
   margin-right: auto;
 }
 
-.todo-container h3 {
+.todoContainer h3 {
   margin: 0 0 10px 0;
   color: inherit;
   text-align: center;
 }
 
-.todo-stats {
+.todoStats {
   text-align: center;
   margin: 0 0 20px 0;
   color: #6366f1;
   font-weight: 500;
 }
 
-.todo-form {
+.todoForm {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.todo-input {
+.todoInput {
   flex: 1;
   padding: 12px;
   border: 2px solid rgba(99, 102, 241, 0.2);
@@ -41,13 +41,13 @@
   transition: border-color 0.3s ease;
 }
 
-.todo-input:focus {
+.todoInput:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.add-btn {
+.addBtn {
   padding: 12px 20px;
   background: #6366f1;
   color: white;
@@ -59,19 +59,19 @@
   font-size: 14px;
 }
 
-.add-btn:hover {
+.addBtn:hover {
   background: #5855eb;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-.todo-list {
+.todoList {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.todo-item {
+.todoItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,42 +82,42 @@
   transition: all 0.3s ease;
 }
 
-.todo-item:hover {
+.todoItem:hover {
   transform: translateX(5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.todo-item.completed {
+.todoItem.completed {
   opacity: 0.7;
   border-left-color: #10b981;
 }
 
-.todo-content {
+.todoContent {
   display: flex;
   align-items: center;
   gap: 12px;
   flex: 1;
 }
 
-.todo-checkbox {
+.todoCheckbox {
   width: 18px;
   height: 18px;
   accent-color: #6366f1;
   cursor: pointer;
 }
 
-.todo-text {
+.todoText {
   font-size: 14px;
   color: inherit;
   transition: all 0.3s ease;
 }
 
-.todo-item.completed .todo-text {
+.todoItem.completed .todoText {
   text-decoration: line-through;
   color: #888;
 }
 
-.delete-btn {
+.deleteBtn {
   background: none;
   border: none;
   font-size: 16px;
@@ -128,13 +128,13 @@
   opacity: 0.7;
 }
 
-.delete-btn:hover {
+.deleteBtn:hover {
   opacity: 1;
   transform: scale(1.1);
   background: rgba(239, 68, 68, 0.1);
 }
 
-.empty-state {
+.emptyState {
   text-align: center;
   color: #888;
   font-style: italic;
@@ -142,20 +142,20 @@
 }
 
 /* Dark mode adjustments */
-body.dark-mode .todo-container {
+body.dark-mode .todoContainer {
   background: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .todo-input {
+body.dark-mode .todoInput {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-body.dark-mode .todo-item {
+body.dark-mode .todoItem {
   background: rgba(255, 255, 255, 0.05);
 }
 
-body.dark-mode .todo-item.completed .todo-text {
+body.dark-mode .todoItem.completed .todoText {
   color: #aaa;
-} 
+}

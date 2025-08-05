@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './TodoList.css';
+import styles from './TodoList.module.css';
 
 /**
  * TodoList component for managing a list of tasks.
@@ -55,38 +55,38 @@ function TodoList() {
   const totalCount = todos.length;
 
   return (
-    <div className="todo-container">
+    <div className={styles.todoContainer}>
       <h3>📝 Todo List</h3>
-      <p className="todo-stats">
+      <p className={styles.todoStats}>
         {completedCount} of {totalCount} tasks completed
       </p>
 
-      <form onSubmit={addTodo} className="todo-form">
+      <form onSubmit={addTodo} className={styles.todoForm}>
         <input
           type="text"
           value={newTodo}
           onChange={(e) => setNewTodo(e.target.value)}
           placeholder="Add a new task..."
-          className="todo-input"
+          className={styles.todoInput}
         />
-        <button type="submit" className="add-btn">Add</button>
+        <button type="submit" className={styles.addBtn}>Add</button>
       </form>
 
-      <div className="todo-list">
+      <div className={styles.todoList}>
         {todos.map(todo => (
-          <div key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`}>
-            <div className="todo-content">
+          <div key={todo.id} className={`${styles.todoItem} ${todo.completed ? styles.completed : ''}`}>
+            <div className={styles.todoContent}>
               <input
                 type="checkbox"
                 checked={todo.completed}
                 onChange={() => toggleTodo(todo.id)}
-                className="todo-checkbox"
+                className={styles.todoCheckbox}
               />
-              <span className="todo-text">{todo.text}</span>
+              <span className={styles.todoText}>{todo.text}</span>
             </div>
             <button
               onClick={() => deleteTodo(todo.id)}
-              className="delete-btn"
+              className={styles.deleteBtn}
               aria-label="Delete todo"
             >
               🗑️
@@ -96,7 +96,7 @@ function TodoList() {
       </div>
 
       {todos.length === 0 && (
-        <p className="empty-state">No tasks yet. Add one above! ✨</p>
+        <p className={styles.emptyState}>No tasks yet. Add one above! ✨</p>
       )}
     </div>
   );

@@ -1,5 +1,5 @@
 import cursorLogo from './cursor-logo.svg';
-import './App.css';
+import styles from './App.module.css';
 import ThemeToggler from './ThemeToggler';
 import UserProfile from './components/UserProfile';
 import TodoList from './components/TodoList';
@@ -23,17 +23,17 @@ function App() {
   const greeting = greetUser(userName);
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <ThemeToggler />
       
-      <header className="App-header">
-        <img src={cursorLogo} className="App-logo" alt="Cursor AI Logo" />
+      <header className={styles.appHeader}>
+        <img src={cursorLogo} className={styles.appLogo} alt="Cursor AI Logo" />
         <h1>{greeting}</h1>
         <p>
           Welcome to your personalized dashboard!
         </p>
         <a
-          className="App-link"
+          className={styles.appLink}
           href="https://cursor.com/"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,8 +42,8 @@ function App() {
         </a>
       </header>
 
-      <main className="App-main">
-        <div className="components-grid">
+      <main className={styles.appMain}>
+        <div className={styles.componentsGrid}>
           <UserProfile />
           <TodoList />
           <WeatherWidget />

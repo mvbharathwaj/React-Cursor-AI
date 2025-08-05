@@ -1,5 +1,6 @@
 // src/ThemeToggler.js
 import React, { useState, useEffect } from "react";
+import styles from './App.module.css';
 
 /**
  * ThemeToggler component allows users to toggle between dark and light mode.
@@ -34,7 +35,7 @@ function ThemeToggler() {
 
   return (
     <button 
-      className="theme-toggle-btn"
+      className={styles.themeToggleBtn}
       onClick={toggleTheme}
       aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
     >
