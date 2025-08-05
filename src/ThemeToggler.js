@@ -1,6 +1,10 @@
 // src/ThemeToggler.js
 import React, { useState, useEffect } from "react";
 
+/**
+ * ThemeToggler component allows users to toggle between dark and light mode.
+ * @returns {JSX.Element} The rendered ThemeToggler button.
+ */
 function ThemeToggler() {
   const [darkMode, setDarkMode] = useState(() => {
     // Check localStorage for saved preference, default to light mode
@@ -20,6 +24,10 @@ function ThemeToggler() {
     }
   }, [darkMode]);
 
+  /**
+   * Toggles the theme between dark and light mode.
+   * @returns {void}
+   */
   const toggleTheme = () => {
     setDarkMode(prev => !prev);
   };

@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './TodoList.css';
 
+/**
+ * TodoList component for managing a list of tasks.
+ * @returns {JSX.Element} The rendered TodoList component.
+ */
 function TodoList() {
   const [todos, setTodos] = useState([
     { id: 1, text: 'Learn React Hooks', completed: false },
@@ -9,6 +13,11 @@ function TodoList() {
   ]);
   const [newTodo, setNewTodo] = useState('');
 
+  /**
+   * Adds a new todo item to the list.
+   * @param {React.FormEvent} e - The form submission event.
+   * @returns {void}
+   */
   const addTodo = (e) => {
     e.preventDefault();
     if (newTodo.trim()) {
@@ -22,12 +31,22 @@ function TodoList() {
     }
   };
 
+  /**
+   * Toggles the completed state of a todo item.
+   * @param {number} id - The ID of the todo item to toggle.
+   * @returns {void}
+   */
   const toggleTodo = (id) => {
     setTodos(todos.map(todo =>
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     ));
   };
 
+  /**
+   * Deletes a todo item from the list.
+   * @param {number} id - The ID of the todo item to delete.
+   * @returns {void}
+   */
   const deleteTodo = (id) => {
     setTodos(todos.filter(todo => todo.id !== id));
   };

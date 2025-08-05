@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './UserProfile.css';
 
+/**
+ * UserProfile component for displaying and editing user information.
+ * @returns {JSX.Element} The rendered UserProfile component.
+ */
 function UserProfile() {
   const [user, setUser] = useState({
     name: 'Bharathwaj',
@@ -13,21 +17,39 @@ function UserProfile() {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({ ...user });
 
+  /**
+   * Enables edit mode for the user profile.
+   * @returns {void}
+   */
   const handleEdit = () => {
     setIsEditing(true);
     setEditData({ ...user });
   };
 
+  /**
+   * Saves the edited user profile data.
+   * @returns {void}
+   */
   const handleSave = () => {
     setUser(editData);
     setIsEditing(false);
   };
 
+  /**
+   * Cancels editing and resets the form data.
+   * @returns {void}
+   */
   const handleCancel = () => {
     setEditData({ ...user });
     setIsEditing(false);
   };
 
+  /**
+   * Handles changes to the user profile form fields.
+   * @param {string} field - The field being changed.
+   * @param {string} value - The new value for the field.
+   * @returns {void}
+   */
   const handleChange = (field, value) => {
     setEditData(prev => ({ ...prev, [field]: value }));
   };

@@ -5,10 +5,19 @@ import UserProfile from './components/UserProfile';
 import TodoList from './components/TodoList';
 import WeatherWidget from './components/WeatherWidget';
 
+/**
+ * Returns a greeting message for the given user name.
+ * @param {string} name - The name of the user to greet.
+ * @returns {string} The greeting message.
+ */
 function greetUser(name) {
   return `Hello, ${name}!`;
 }
 
+/**
+ * Main application component for the dashboard.
+ * @returns {JSX.Element} The rendered App component.
+ */
 function App() {
   const userName = "Bharathwaj";
   const greeting = greetUser(userName);

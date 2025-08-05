@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './WeatherWidget.css';
 
+/**
+ * WeatherWidget component for displaying weather information and forecast.
+ * @returns {JSX.Element} The rendered WeatherWidget component.
+ */
 function WeatherWidget() {
   const [weather, setWeather] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -36,6 +40,11 @@ function WeatherWidget() {
     fetchWeather();
   }, []);
 
+  /**
+   * Returns a color based on the temperature value.
+   * @param {number} temp - The temperature in Celsius.
+   * @returns {string} The color code for the temperature.
+   */
   const getWeatherColor = (temp) => {
     if (temp > 30) return '#ff6b6b';
     if (temp > 20) return '#ffd93d';
