@@ -1,0 +1,171 @@
+/* Light theme (default) */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 14px;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 20px;
+}
+
+.App-header h1 {
+  margin: 20px 0;
+  color: inherit;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.App-link {
+  color: #6366f1;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #6366f1;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.App-main {
+  padding: 40px 20px;
+  min-height: 40vh;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark theme */
+body.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .App {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.dark-mode .App-header {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+body.dark-mode .App-link {
+  color: #4fc3f7;
+}
+
+/* Theme toggle button styles */
+.theme-toggle-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 25px;
+  background-color: #ffffff;
+  color: #333333;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+/* Dark mode button styles */
+body.dark-mode .theme-toggle-btn {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background-color: #444444;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .App-header {
+    min-height: 50vh;
+    padding: 15px;
+  }
+  
+  .App-header h1 {
+    font-size: 2rem;
+  }
+  
+  .components-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 10px;
+  }
+  
+  .App-main {
+    padding: 20px 10px;
+  }
+}
