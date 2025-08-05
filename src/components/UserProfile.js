@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './UserProfile.css';
+import styles from './UserProfile.module.css';
 
 /**
  * UserProfile component for displaying and editing user information.
@@ -55,19 +55,19 @@ function UserProfile() {
   };
 
   return (
-    <div className="user-profile">
-      <div className="profile-header">
-        <div className="avatar">
+    <div className={styles.userProfile}>
+      <div className={styles.profileHeader}>
+        <div className={styles.avatar}>
           <span>{user.name.charAt(0).toUpperCase()}</span>
         </div>
         <h2>{user.name}</h2>
-        <p className="role">{user.role}</p>
+        <p className={styles.role}>{user.role}</p>
       </div>
 
-      <div className="profile-content">
+      <div className={styles.profileContent}>
         {isEditing ? (
-          <div className="edit-form">
-            <div className="form-group">
+          <div className={styles.editForm}>
+            <div className={styles.formGroup}>
               <label>Name:</label>
               <input
                 type="text"
@@ -75,7 +75,7 @@ function UserProfile() {
                 onChange={(e) => handleChange('name', e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <label>Email:</label>
               <input
                 type="email"
@@ -83,7 +83,7 @@ function UserProfile() {
                 onChange={(e) => handleChange('email', e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <label>Role:</label>
               <input
                 type="text"
@@ -91,7 +91,7 @@ function UserProfile() {
                 onChange={(e) => handleChange('role', e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <label>Location:</label>
               <input
                 type="text"
@@ -99,7 +99,7 @@ function UserProfile() {
                 onChange={(e) => handleChange('location', e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className={styles.formGroup}>
               <label>Bio:</label>
               <textarea
                 value={editData.bio}
@@ -107,23 +107,23 @@ function UserProfile() {
                 rows="3"
               />
             </div>
-            <div className="button-group">
-              <button onClick={handleSave} className="save-btn">Save</button>
-              <button onClick={handleCancel} className="cancel-btn">Cancel</button>
+            <div className={styles.buttonGroup}>
+              <button onClick={handleSave} className={styles.saveBtn}>Save</button>
+              <button onClick={handleCancel} className={styles.cancelBtn}>Cancel</button>
             </div>
           </div>
         ) : (
-          <div className="profile-info">
-            <div className="info-item">
+          <div className={styles.profileInfo}>
+            <div className={styles.infoItem}>
               <strong>Email:</strong> {user.email}
             </div>
-            <div className="info-item">
+            <div className={styles.infoItem}>
               <strong>Location:</strong> {user.location}
             </div>
-            <div className="info-item">
+            <div className={styles.infoItem}>
               <strong>Bio:</strong> {user.bio}
             </div>
-            <button onClick={handleEdit} className="edit-btn">Edit Profile</button>
+            <button onClick={handleEdit} className={styles.editBtn}>Edit Profile</button>
           </div>
         )}
       </div>

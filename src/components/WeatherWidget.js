@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './WeatherWidget.css';
+import styles from './WeatherWidget.module.css';
 
 /**
  * WeatherWidget component for displaying weather information and forecast.
@@ -54,9 +54,9 @@ function WeatherWidget() {
 
   if (loading) {
     return (
-      <div className="weather-container">
-        <div className="loading-spinner">
-          <div className="spinner"></div>
+      <div className={styles.weatherContainer}>
+        <div className={styles.loadingSpinner}>
+          <div className={styles.spinner}></div>
           <p>Loading weather...</p>
         </div>
       </div>
@@ -65,8 +65,8 @@ function WeatherWidget() {
 
   if (error) {
     return (
-      <div className="weather-container">
-        <div className="error-message">
+      <div className={styles.weatherContainer}>
+        <div className={styles.errorMessage}>
           <p>⚠️ {error}</p>
           <button onClick={() => window.location.reload()}>Retry</button>
         </div>
@@ -75,36 +75,36 @@ function WeatherWidget() {
   }
 
   return (
-    <div className="weather-container">
+    <div className={styles.weatherContainer}>
       <h3>🌤️ Weather</h3>
       
-      <div className="weather-main">
-        <div className="weather-icon">
+      <div className={styles.weatherMain}>
+        <div className={styles.weatherIcon}>
           {weather.icon}
         </div>
-        <div className="weather-info">
-          <h2 className="temperature" style={{ color: getWeatherColor(weather.temperature) }}>
+        <div className={styles.weatherInfo}>
+          <h2 className={styles.temperature} style={{ color: getWeatherColor(weather.temperature) }}>
             {weather.temperature}°C
           </h2>
-          <p className="condition">{weather.condition}</p>
-          <p className="location">{weather.location}</p>
+          <p className={styles.condition}>{weather.condition}</p>
+          <p className={styles.location}>{weather.location}</p>
         </div>
       </div>
 
-      <div className="weather-details">
-        <div className="detail-item">
-          <span className="detail-label">💧 Humidity</span>
-          <span className="detail-value">{weather.humidity}%</span>
+      <div className={styles.weatherDetails}>
+        <div className={styles.detailItem}>
+          <span className={styles.detailLabel}>💧 Humidity</span>
+          <span className={styles.detailValue}>{weather.humidity}%</span>
         </div>
-        <div className="detail-item">
-          <span className="detail-label">💨 Wind</span>
-          <span className="detail-value">{weather.windSpeed} km/h</span>
+        <div className={styles.detailItem}>
+          <span className={styles.detailLabel}>💨 Wind</span>
+          <span className={styles.detailValue}>{weather.windSpeed} km/h</span>
         </div>
       </div>
 
-      <div className="weather-forecast">
+      <div className={styles.weatherForecast}>
         <h4>5-Day Forecast</h4>
-        <div className="forecast-items">
+        <div className={styles.forecastItems}>
           {[
             { day: 'Mon', temp: 29, icon: '☀️' },
             { day: 'Tue', temp: 27, icon: '🌤️' },
@@ -112,10 +112,10 @@ function WeatherWidget() {
             { day: 'Thu', temp: 26, icon: '🌧️' },
             { day: 'Fri', temp: 28, icon: '⛅' }
           ].map((day, index) => (
-            <div key={index} className="forecast-item">
-              <span className="forecast-day">{day.day}</span>
-              <span className="forecast-icon">{day.icon}</span>
-              <span className="forecast-temp">{day.temp}°</span>
+            <div key={index} className={styles.forecastItem}>
+              <span className={styles.forecastDay}>{day.day}</span>
+              <span className={styles.forecastIcon}>{day.icon}</span>
+              <span className={styles.forecastTemp}>{day.temp}°</span>
             </div>
           ))}
         </div>

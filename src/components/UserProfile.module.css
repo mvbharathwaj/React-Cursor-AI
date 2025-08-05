@@ -1,4 +1,4 @@
-.user-profile {
+.userProfile {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 20px;
@@ -11,7 +11,7 @@
   margin-right: auto;
 }
 
-.profile-header {
+.profileHeader {
   text-align: center;
   margin-bottom: 30px;
 }
@@ -31,7 +31,7 @@
   box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
 }
 
-.profile-header h2 {
+.profileHeader h2 {
   margin: 0 0 5px 0;
   color: inherit;
 }
@@ -42,11 +42,11 @@
   font-weight: 500;
 }
 
-.profile-content {
+.profileContent {
   margin-top: 20px;
 }
 
-.profile-info .info-item {
+.profileInfo .infoItem {
   margin-bottom: 15px;
   padding: 10px;
   background: rgba(255, 255, 255, 0.05);
@@ -54,26 +54,26 @@
   border-left: 3px solid #6366f1;
 }
 
-.edit-form {
+.editForm {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.form-group {
+.formGroup {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.form-group label {
+.formGroup label {
   font-weight: 600;
   color: inherit;
   font-size: 14px;
 }
 
-.form-group input,
-.form-group textarea {
+.formGroup input,
+.formGroup textarea {
   padding: 10px;
   border: 2px solid rgba(99, 102, 241, 0.2);
   border-radius: 8px;
@@ -83,22 +83,22 @@
   transition: border-color 0.3s ease;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.formGroup input:focus,
+.formGroup textarea:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
-.button-group {
+.buttonGroup {
   display: flex;
   gap: 10px;
   margin-top: 10px;
 }
 
-.edit-btn,
-.save-btn,
-.cancel-btn {
+.editBtn,
+.saveBtn,
+.cancelBtn {
   padding: 10px 20px;
   border: none;
   border-radius: 8px;
@@ -108,52 +108,52 @@
   font-size: 14px;
 }
 
-.edit-btn {
+.editBtn {
   background: #6366f1;
   color: white;
   width: 100%;
 }
 
-.edit-btn:hover {
+.editBtn:hover {
   background: #5855eb;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
 
-.save-btn {
+.saveBtn {
   background: #10b981;
   color: white;
   flex: 1;
 }
 
-.save-btn:hover {
+.saveBtn:hover {
   background: #059669;
   transform: translateY(-2px);
 }
 
-.cancel-btn {
+.cancelBtn {
   background: #ef4444;
   color: white;
   flex: 1;
 }
 
-.cancel-btn:hover {
+.cancelBtn:hover {
   background: #dc2626;
   transform: translateY(-2px);
 }
 
 /* Dark mode adjustments */
-body.dark-mode .user-profile {
+body.dark-mode .userProfile {
   background: rgba(26, 26, 26, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
+body.dark-mode .formGroup input,
+body.dark-mode .formGroup textarea {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-body.dark-mode .profile-info .info-item {
+body.dark-mode .profileInfo .infoItem {
   background: rgba(255, 255, 255, 0.05);
-} 
+}
