@@ -9,6 +9,9 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .profileHeader {
@@ -20,7 +23,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,7 +41,7 @@
 
 .role {
   margin: 0;
-  color: #6366f1;
+  color: var(--accent-color);
   font-weight: 500;
 }
 
@@ -51,7 +54,9 @@
   padding: 10px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid var(--accent-color);
+  background-color: var(--bg-primary);
+  border-color: var(--accent-color);
 }
 
 .editForm {
@@ -81,12 +86,15 @@
   color: inherit;
   font-size: 14px;
   transition: border-color 0.3s ease;
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
@@ -109,13 +117,13 @@
 }
 
 .editBtn {
-  background: #6366f1;
+  background: var(--accent-color);
   color: white;
   width: 100%;
 }
 
 .editBtn:hover {
-  background: #5855eb;
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
@@ -140,20 +148,4 @@
 .cancelBtn:hover {
   background: #dc2626;
   transform: translateY(-2px);
-}
-
-/* Dark mode adjustments */
-body.dark-mode .userProfile {
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .formGroup input,
-body.dark-mode .formGroup textarea {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-mode .profileInfo .infoItem {
-  background: rgba(255, 255, 255, 0.05);
 }

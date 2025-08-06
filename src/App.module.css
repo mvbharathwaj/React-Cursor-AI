@@ -15,7 +15,8 @@ body {
 .app {
   text-align: center;
   min-height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -31,14 +32,14 @@ body {
 }
 
 .appHeader {
-  background-color: #ffffff;
+  background-color: var(--bg-primary);
   min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #333333;
+  color: var(--text-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   padding: 20px;
 }
@@ -51,20 +52,24 @@ body {
 }
 
 .appLink {
-  color: #6366f1;
+  color: var(--accent-color);
   transition: color 0.3s ease;
   text-decoration: none;
   font-weight: 600;
   margin-top: 20px;
   padding: 10px 20px;
   border-radius: 25px;
-  background-color: #6366f1;
+  background-color: var(--accent-color);
   color: #ffffff;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s ease;
   z-index: 1000;
+}
+
+.appLink:hover {
+  background-color: var(--accent-hover);
 }
 
 .appMain {
@@ -89,36 +94,16 @@ body {
   }
 }
 
-/* Dark theme */
-body.dark-mode {
-  background-color: #1a1a1a !important;
-  color: #ffffff !important;
-}
-
-body.dark-mode .app {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
-body.dark-mode .appHeader {
-  background-color: #1a1a1a;
-  color: #ffffff;
-}
-
-body.dark-mode .appLink {
-  color: #4fc3f7;
-}
-
 /* Theme toggle button styles */
 .themeToggleBtn {
   position: fixed;
   top: 20px;
   right: 20px;
   padding: 10px 20px;
-  border: 2px solid #333;
+  border: 2px solid var(--border-color);
   border-radius: 25px;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
@@ -129,23 +114,7 @@ body.dark-mode .appLink {
 .themeToggleBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-/* Dark mode button styles */
-body.dark-mode .themeToggleBtn {
-  background-color: #333333;
-  color: #ffffff;
-  border-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  transition: all 0.3s ease;
-  z-index: 1000;
-}
-
-body.dark-mode .themeToggleBtn:hover {
-  background-color: #444444;
+  background-color: var(--bg-secondary);
 }
 
 /* Responsive design */

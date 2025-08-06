@@ -9,6 +9,9 @@
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .todoContainer h3 {
@@ -20,7 +23,7 @@
 .todoStats {
   text-align: center;
   margin: 0 0 20px 0;
-  color: #6366f1;
+  color: var(--accent-color);
   font-weight: 500;
 }
 
@@ -39,17 +42,20 @@
   color: inherit;
   font-size: 14px;
   transition: border-color 0.3s ease;
+  background-color: var(--bg-primary);
+  border-color: var(--border-color);
+  color: var(--text-primary);
 }
 
 .todoInput:focus {
   outline: none;
-  border-color: #6366f1;
+  border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
 }
 
 .addBtn {
   padding: 12px 20px;
-  background: #6366f1;
+  background: var(--accent-color);
   color: white;
   border: none;
   border-radius: 8px;
@@ -60,7 +66,7 @@
 }
 
 .addBtn:hover {
-  background: #5855eb;
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
 }
@@ -78,8 +84,10 @@
   padding: 15px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  border-left: 3px solid #6366f1;
+  border-left: 3px solid var(--accent-color);
   transition: all 0.3s ease;
+  background-color: var(--bg-primary);
+  border-color: var(--accent-color);
 }
 
 .todoItem:hover {
@@ -102,7 +110,7 @@
 .todoCheckbox {
   width: 18px;
   height: 18px;
-  accent-color: #6366f1;
+  accent-color: var(--accent-color);
   cursor: pointer;
 }
 
@@ -114,7 +122,7 @@
 
 .todoItem.completed .todoText {
   text-decoration: line-through;
-  color: #888;
+  color: var(--text-secondary);
 }
 
 .deleteBtn {
@@ -136,26 +144,7 @@
 
 .emptyState {
   text-align: center;
-  color: #888;
+  color: var(--text-secondary);
   font-style: italic;
   margin: 20px 0 0 0;
-}
-
-/* Dark mode adjustments */
-body.dark-mode .todoContainer {
-  background: rgba(26, 26, 26, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-body.dark-mode .todoInput {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-body.dark-mode .todoItem {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-body.dark-mode .todoItem.completed .todoText {
-  color: #aaa;
 }

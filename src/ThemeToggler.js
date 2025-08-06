@@ -1,47 +1,58 @@
 // src/ThemeToggler.js
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
 import styles from './App.module.css';
 
-/**
- * ThemeToggler component allows users to toggle between dark and light mode.
- * @returns {JSX.Element} The rendered ThemeToggler button.
- */
-function ThemeToggler() {
-  const [darkMode, setDarkMode] = useState(() => {
-    // Check localStorage for saved preference, default to light mode
-    const saved = localStorage.getItem('darkMode');
-    return saved ? JSON.parse(saved) : false;
+// Theme context
+const ThemeContext = React.createContext({
+  darkMode: false,
+  toggleTheme: () => {},
+});
+
+export function ThemeProvider({ children }) {
+  const [darkMode, setDarkMode] = React.useState(() => {
+    try {
+      const saved = localStorage.getItem('darkMode');
+      return saved ? JSON.parse(saved) : false;
+    } catch {
+      return false;
+    }
   });
 
-  useEffect(() => {
-    // Save preference to localStorage
-    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  React.useEffect(() => {
+    try {
+      localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    } catch {}
     
-    // Add or remove the dark class on the body
+    // Use data-theme attribute instead of classes
     if (darkMode) {
-      document.body.classList.add("dark-mode");
+      document.documentElement.setAttribute('data-theme', 'dark');
     } else {
-      document.body.classList.remove("dark-mode");
+      document.documentElement.setAttribute('data-theme', 'light');
     }
   }, [darkMode]);
 
-  /**
-   * Toggles the theme between dark and light mode.
-   * @returns {void}
-   */
-  const toggleTheme = () => {
-    setDarkMode(prev => !prev);
-  };
+  const toggleTheme = React.useCallback(() => setDarkMode((prev) => !prev), []);
 
   return (
-    <button 
+    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+function ThemeToggler() {
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
+  return (
+    <button
       className={styles.themeToggleBtn}
       onClick={toggleTheme}
       aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+      title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
     >
       {darkMode ? '☀️ Light Mode' : '🌙 Dark Mode'}
     </button>
   );
 }
 
+export { ThemeContext };
 export default ThemeToggler;
